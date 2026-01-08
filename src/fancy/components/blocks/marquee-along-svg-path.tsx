@@ -87,6 +87,9 @@ interface MarqueeAlongSvgPathProps {
   zIndexRange?: number
 
   cssVariableInterpolation?: CSSVariableInterpolation[]
+
+  // Responsive properties
+  responsive?: boolean
 }
 
 const MarqueeAlongSvgPath = ({
@@ -134,13 +137,59 @@ const MarqueeAlongSvgPath = ({
   zIndexRange = 10, // Range of z-index values to use
 
   cssVariableInterpolation = [],
+
+  // Responsive defaults
+  responsive = false,
 }: MarqueeAlongSvgPathProps) => {
   const container = useRef<HTMLDivElement>(null)
+  const marqueeContainerRef = useRef<HTMLDivElement>(null)
   const baseOffset = useMotionValue(0)
 
   const pathRef = useRef<SVGPathElement>(null)
 
   const itemRefs = useRef<Map<string, HTMLDivElement>>(new Map())
+
+  // Responsive scaling using direct DOM manipulation (no re-renders)
+  useEffect(() => {
+    if (!responsive) return
+
+    const [, , vbWidth, vbHeight] = viewBox.split(" ").map(Number)
+    const originalWidth = vbWidth || 100
+    const originalHeight = vbHeight || 100
+
+    const updateScale = () => {
+      const wrapper = container.current
+      const marqueeContainer = marqueeContainerRef.current
+      if (!wrapper || !marqueeContainer) return
+
+      const wrapperWidth = wrapper.clientWidth
+      const wrapperHeight = wrapper.clientHeight
+
+      const scaleX = wrapperWidth / originalWidth
+      const scaleY = wrapperHeight / originalHeight
+      const scale = Math.min(scaleX, scaleY)
+
+      // Calculate the scaled dimensions
+      const scaledWidth = originalWidth * scale
+      const scaledHeight = originalHeight * scale
+
+      // Center the marquee container within the wrapper
+      const offsetX = (wrapperWidth - scaledWidth) / 2
+      const offsetY = (wrapperHeight - scaledHeight) / 2
+
+      // Set fixed dimensions on the container
+      marqueeContainer.style.width = `${originalWidth}px`
+      marqueeContainer.style.height = `${originalHeight}px`
+
+      // Apply scale and position to center
+      marqueeContainer.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`
+      marqueeContainer.style.transformOrigin = "top left"
+    }
+
+    updateScale()
+    window.addEventListener("resize", updateScale)
+    return () => window.removeEventListener("resize", updateScale)
+  }, [responsive, viewBox])
 
   // Create an array of items outside of the render function
   const items = React.useMemo(() => {
@@ -324,24 +373,29 @@ const MarqueeAlongSvgPath = ({
       onPointerCancel={handlePointerUp}
       className={cn("relative", className)}
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={width}
-        height={height}
-        viewBox={viewBox}
-        preserveAspectRatio={preserveAspectRatio}
-        className="w-full h-full"
+      <div
+        ref={marqueeContainerRef}
+        className="relative"
+        style={{ contain: "layout style" }}
       >
-        <path
-          id={id}
-          d={path}
-          stroke={showPath ? "currentColor" : "none"}
-          fill="none"
-          ref={pathRef}
-        />
-      </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={width}
+          height={height}
+          viewBox={viewBox}
+          preserveAspectRatio={preserveAspectRatio}
+          className="w-full h-full"
+        >
+          <path
+            id={id}
+            d={path}
+            stroke={showPath ? "currentColor" : "none"}
+            fill="none"
+            ref={pathRef}
+          />
+        </svg>
 
-      {items.map(({ child, repeatIndex, itemIndex, key }) => {
+        {items.map(({ child, repeatIndex, itemIndex, key }) => {
         // Create a unique offset transform for each item
         const itemOffset = useTransform(baseOffset, (v) => {
           const position = (itemIndex * 100) / items.length
@@ -390,6 +444,8 @@ const MarqueeAlongSvgPath = ({
               offsetPath: `path('${path}')`,
               offsetDistance: itemOffset,
               zIndex: enableRollingZIndex ? zIndex : undefined,
+              willChange: "offset-distance",
+              backfaceVisibility: "hidden",
               ...cssVariables,
             }}
             aria-hidden={repeatIndex > 0}
@@ -400,6 +456,7 @@ const MarqueeAlongSvgPath = ({
           </motion.div>
         )
       })}
+      </div>
     </div>
   )
 }

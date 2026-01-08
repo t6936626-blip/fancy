@@ -33,6 +33,7 @@ export default function MarqueeAlongSvgPathDemo() {
       <div className="absolute h-[120%] sm:h-[150%] top-40 w-full justify-center items-center flex flex-col space-y-2 sm:space-y-3 md:space-y-4">
         <MarqueeAlongSvgPath
           path={path}
+          viewBox="0 0 1040 570"
           baseVelocity={4}
           showPath={false}
           slowdownOnHover={true}
@@ -45,7 +46,8 @@ export default function MarqueeAlongSvgPathDemo() {
           repeat={4}
           enableRollingZIndex={true}
           dragSensitivity={0.01}
-          className="absolute top-0 w-full h-full scale-35 -left-30 sm:scale-80 sm:-left-24"
+          className="absolute top-0 w-full h-full"
+          responsive
           grabCursor
         >
           {imgs.map((img, i) => (

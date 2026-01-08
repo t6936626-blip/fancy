@@ -137,7 +137,43 @@ It's also possible to map any CSS property to the path progress using the `cssVa
 ```
 </CodeSnippet>
 
-<ComponentPreview name="marquee-along-svg-path-mapping-demo" />
+{/* <ComponentPreview name="marquee-along-svg-path-mapping-demo" /> */}
+
+## Responsivity
+
+SVG paths are defined with fixed coordinates, which can make scaling tricky. This component supports a **Scale Container** technique to make the marquee responsive.
+
+### Scale Container Technique
+
+When `responsive` is set to `true`, the component will automatically scale and center the entire marquee (SVG + elements) to fit within its container while maintaining aspect ratio.
+
+<CodeSnippet title="Enabling responsive mode">
+```jsx
+<MarqueeAlongSvgPath
+  path={path}
+  viewBox="0 0 996 330" // Important: set viewBox to match your path's bounding box
+  className="w-full h-full"
+  responsive
+>
+  {/* Your content */}
+</MarqueeAlongSvgPath>
+```
+</CodeSnippet>
+
+**How it works:**
+1. The component parses the `viewBox` to get the original dimensions
+2. It measures the container's current dimensions using a resize listener
+3. It calculates a scale factor: `Math.min(containerWidth / originalWidth, containerHeight / originalHeight)`
+4. The marquee is scaled and centered using CSS `transform: translate() scale()`
+
+**Important notes:**
+- Make sure your `viewBox` matches the bounding box of your SVG path for proper scaling
+- The marquee will be automatically centered within its container
+- This technique is simple and performant, but the marquee elements will also be scaled (smaller on smaller screens)
+
+### Alternative: D3-based Path Scaling
+
+For more advanced use cases where you want the elements to maintain their size while the path scales, you can use D3.js to parse and recreate the path at new dimensions. This technique is covered in detail in the [Codrops tutorial](https://tympanus.net/codrops/2025/06/17/building-an-infinite-marquee-along-an-svg-path-with-react-motion/).
 
 ## Notes
 
@@ -333,6 +369,12 @@ Click on the individual images in the 2nd demo to see the original artworks & au
       <TableCell>`Array<{ property: string, from: number, to: number }>`</TableCell>
       <TableCell>`[]`</TableCell>
       <TableCell>CSS properties to interpolate along the path</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>responsive</TableCell>
+      <TableCell>`boolean`</TableCell>
+      <TableCell>`false`</TableCell>
+      <TableCell>Whether to enable responsive scaling and centering</TableCell>
     </TableRow>
   </TableBody>
 </Table>

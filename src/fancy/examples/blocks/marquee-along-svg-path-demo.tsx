@@ -5,15 +5,17 @@ const path =
 
 export default function MarqueeAlongSvgPathDemo() {
   return (
-    <div className="w-full h-full bg-zinc-50 flex">
+    <div className="w-full h-full bg-zinc-50 flex items-center justify-center">
       <MarqueeAlongSvgPath
         path={path}
+        viewBox="0 0 996 330"
         baseVelocity={8}
         slowdownOnHover={true}
         draggable={true}
         repeat={2}
         dragSensitivity={0.1}
-        className="absolute -left-24 sm:-left-32 top-32 scale-60 sm:scale-100"
+        className="w-full h-full scale-105"
+        responsive
         grabCursor
       >
         {imgs.map((img, i) => (
