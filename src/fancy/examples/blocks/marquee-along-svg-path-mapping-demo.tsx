@@ -24,14 +24,15 @@ export default function MarqueeAlongSvgPathDemo() {
       <h2 className="text-black text-6xl sm:text-8xl z-10">fancy</h2>
       <MarqueeAlongSvgPath
         path={path}
-        viewBox="0 0 400 474" // Adjusted to center the spiral
+        viewBox="0 0 400 474"
         baseVelocity={1}
         showPath={false}
         slowdownOnHover={true}
         repeat={8}
         enableRollingZIndex={false}
         dragSensitivity={0.01}
-        className="absolute top-40 scale-100 -left-32 w-full h-full transform-3d"
+        className="absolute w-full h-full transform-3d will-change-transform"
+        responsive
         cssVariableInterpolation={[
           { property: "opacity", from: 0, to: 1.5 },
           { property: "scale", from: 0.1, to: 1 },
@@ -47,7 +48,7 @@ export default function MarqueeAlongSvgPathDemo() {
           >
             <div
               key={i}
-              className="w-14 h-full cursor-pointer transform-3d hover:rotate-y-0 duration-300 ease-in-out hover:rotate-x-0 perspective-midrange -rotate-x-35 rotate-y-35 hover:scale-200"
+              className="w-14 h-full cursor-pointer hover:rotate-y-0 duration-300 ease-in-out hover:scale-200 will-change-transform"
             >
               <img
                 src={img.src}
