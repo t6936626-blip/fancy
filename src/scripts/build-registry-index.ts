@@ -35,7 +35,7 @@ interface RegistryItem {
 }
 
 function getAuthor(componentName: string, type: "ui" | "example" | "hook" | "util"): string {
-  const defaultAuthor = "daniel petho <https://www.danielpetho.com>"
+  const defaultAuthor = "Imoogle Technology <https://imoogleai.xyz>"
   
   // Get the source file path based on type
   let sourceFilePath
@@ -505,7 +505,7 @@ const registryItems = Object.values(cleanRegistry).map((item: any) => {
 const shadcnRegistry = {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "fancy",
-  "homepage": "https://fancycomponents.dev",
+  "homepage": "https://component.imoogleai.xyz",
   "items": registryItems
 }
 

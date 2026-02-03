@@ -16,6 +16,6 @@
     "utils": "@/lib/utils"
   },
   "registries": {
-    "@fancy": "https://fancycomponents.dev/r/{name}.json"
+    "@fancy": "https://component.imoogleai.xyz/r/{name}.json"
   }
 }
