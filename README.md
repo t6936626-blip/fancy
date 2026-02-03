@@ -1,6 +1,6 @@
 # MoFancy
 
-A growing library of fancy, fun, animated react components & microinteractions to make the web fun again. Free & Open Source. Developed by Imoogle Technology.
+A growing library of fancy, fun, animated react components & microinteractions to make the web fun again. Free & Open Source. An Imoogle Technology product, developed by sidicode.
 
 ## Documentation
 
