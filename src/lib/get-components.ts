@@ -1,6 +1,8 @@
 import fs from "node:fs"
 import path from "node:path"
 
+const CDN_URL = process.env.BUNNY_CDN_URL || "https://mofancy.b-cdn.net"
+
 export const COMPONENTS_DIRECTORY = "/src/content/docs/components/"
 
 export interface Component {
@@ -53,10 +55,10 @@ export function getAllComponents(): Component[] {
         name: componentName,
         category: category,
         thumbnail: {
-          url: `${process.env.BUNNY_CDN_URL}/thumbnails/${componentName}.jpg`
+          url: `${CDN_URL}/thumbnails/${componentName}.jpg`
         },
         demo: {
-          url: `${process.env.BUNNY_CDN_URL}/demos/${componentName}.mp4`
+          url: `${CDN_URL}/demos/${componentName}.mp4`
         }
       })
     }
@@ -82,10 +84,10 @@ export function getComponentByName(name: string): Component | undefined {
         name: name,
         category: category,
         thumbnail: {
-          url: `${process.env.BUNNY_CDN_URL}/thumbnails/${name}.jpg`
+          url: `${CDN_URL}/thumbnails/${name}.jpg`
         },
         demo: {
-          url: `${process.env.BUNNY_CDN_URL}/demos/${name}.mp4`
+          url: `${CDN_URL}/demos/${name}.mp4`
         }
       }
     }
