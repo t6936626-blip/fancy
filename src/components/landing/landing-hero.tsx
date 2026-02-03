@@ -36,7 +36,7 @@ export function LandingHero({ allComps }: { allComps: Component[] | null }) {
 
               <TextRotate
                 texts={[
-                  "fancy",
+                  "mofancy",
                   "fun",
                   "lovely ♥",
                   "weird",
@@ -92,7 +92,7 @@ export function LandingHero({ allComps }: { allComps: Component[] | null }) {
             Check docs <span className="font-serif ml-1">→</span>
           </MotionLink>
           <MotionLink
-            href="https://github.com/danielpetho/fancy"
+            href="https://github.com/imoogletech/mofancy"
             className="w-28 sm:w-32 md:w-36 lg:w-40 sm:text-base md:text-lg lg:text-xl font-medium tracking-tight text-white bg-blue dark:bg-blue-500 px-3 py-1.5 sm:px-4 sm:py-2 md:px-4 md:py-2 lg:px-5 lg:py-2.5 rounded-lg md:rounded-xl z-20 shadow-2xl whitespace-nowrap cursor-pointer inline-block text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-blue"
             animate={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
