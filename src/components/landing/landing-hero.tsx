@@ -36,7 +36,7 @@ export function LandingHero({ allComps }: { allComps: Component[] | null }) {
 
               <TextRotate
                 texts={[
-                  "fancy",
+                  "mofancy",
                   "fun",
                   "lovely ♥",
                   "weird",
@@ -60,13 +60,13 @@ export function LandingHero({ allComps }: { allComps: Component[] | null }) {
           </LayoutGroup>
         </motion.h1>
         <motion.p
-          className="text-sm sm:text-lg md:text-xl lg:text-2xl text-center font-overused-grotesk pt-4 sm:pt-8 md:pt-10 lg:pt-12"
+          className="text-sm sm:text-lg md:text-xl lg:text-2xl text-center font-overused-grotesk pt-4 sm:pt-8 md:pt-10 lg:pt-12 text-primary-foreground max-w-xl leading-relaxed"
           animate={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.2, ease: "easeOut", delay: 0.5 }}
         >
-          with a growing library of ready-to-use react components &
-          microinteractions. free & open source.
+          A growing library of ready-to-use React components &
+          microinteractions. Free & open source.
         </motion.p>
 
         <div className="flex flex-row justify-center space-x-4 items-center mt-10 sm:mt-16 md:mt-20 lg:mt-20 text-xs">
@@ -92,8 +92,8 @@ export function LandingHero({ allComps }: { allComps: Component[] | null }) {
             Check docs <span className="font-serif ml-1">→</span>
           </MotionLink>
           <MotionLink
-            href="https://github.com/danielpetho/fancy"
-            className="w-28 sm:w-32 md:w-36 lg:w-40 sm:text-base md:text-lg lg:text-xl font-medium tracking-tight text-white bg-blue dark:bg-blue-500 px-3 py-1.5 sm:px-4 sm:py-2 md:px-4 md:py-2 lg:px-5 lg:py-2.5 rounded-lg md:rounded-xl z-20 shadow-2xl whitespace-nowrap cursor-pointer inline-block text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-blue"
+            href="https://github.com/imoogletech/mofancy"
+            className="w-28 sm:w-32 md:w-36 lg:w-40 sm:text-base md:text-lg lg:text-xl font-medium tracking-tight text-foreground bg-transparent border-2 border-foreground/20 hover:border-foreground/40 px-3 py-1.5 sm:px-4 sm:py-2 md:px-4 md:py-2 lg:px-5 lg:py-2.5 rounded-lg md:rounded-xl z-20 whitespace-nowrap cursor-pointer inline-block text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-foreground transition-colors"
             animate={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
             transition={{

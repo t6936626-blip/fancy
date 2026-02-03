@@ -23,11 +23,11 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "Daniel Petho",
-      url: "https://danielpetho.com",
+      name: "Imoogle Technology",
+      url: "https://imoogleai.xyz",
     },
   ],
-  creator: "danielpetho",
+  creator: "Imoogle Technology",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@nonzeroexitcode",
+    creator: "@imoogletech",
   },
   icons: {
     icon: "/favicon.ico",

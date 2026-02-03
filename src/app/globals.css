@@ -302,8 +302,8 @@
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #0c0a09;
+    --background: #f5f3ef;
+    --foreground: #1a1a1a;
 
     --card: 0 0% 100%;
     --card-foreground: 20 14.3% 4.1%;
@@ -311,94 +311,93 @@
     --popover: 0 0% 100%;
     --popover-foreground: 20 14.3% 4.1%;
 
-    --primary: #0c0a09;
-    --primary-foreground: #78716c;
+    --primary: #1a1a1a;
+    --primary-foreground: #6b6b6b;
 
-    --secondary: #a1a1a6;
-    --secondary-foreground: #f4f4f5;
+    --secondary: #8a8a8a;
+    --secondary-foreground: #f5f3ef;
 
-    --muted: 60 4.8% 95.9%;
+    --muted: 40 20% 94%;
     --muted-foreground: 25 5.3% 44.7%;
 
-    --accent: 60 4.8% 95.9%;
+    --accent: 40 20% 94%;
     --accent-foreground: 24 9.8% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 60 9.1% 97.8%;
 
-    --border: 20 5.9% 90%;
-    --input: 20 5.9% 90%;
+    --border: 40 10% 88%;
+    --input: 40 10% 88%;
     --ring: 20 14.3% 4.1%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     /* Other colors */
-    --red: #ff5941;
-    --orange: #f97316;
-    --pink: #e794da;
-    --teal: #1f464d;
-    --teal-foreground: #3bb6ab;
-    --yellow: #eab308;
-    --yellow-foreground: #ffd726;
+    --red: #c45c4a;
+    --orange: #d97706;
+    --pink: #d4a5c9;
+    --teal: #2d5a5a;
+    --teal-foreground: #4db3a8;
+    --yellow: #c9a227;
+    --yellow-foreground: #f0d45c;
 
-    --editor-bg: #151515;
-    --editor-border: #252525;
+    --editor-bg: #1a1a1a;
+    --editor-border: #2a2a2a;
 
     --blue: var(--blue-700);
   
-    --blue-50: #e8f3ff;
-    --blue-100: #d5e8ff;
-    --blue-200: #b3d2ff;
-    --blue-300: #85b2ff;
-    --blue-400: #5684ff;
-    --blue-500: #2f56ff;
-    --blue-600: #0c22ff;
-    --blue-700: #0015ff;
-    --blue-800: #0619cd;
-    --blue-900: #10229f;
-    --blue-950: #0a125c;
+    --blue-50: #f0f4f8;
+    --blue-100: #dce6f0;
+    --blue-200: #b8cce0;
+    --blue-300: #8fadc9;
+    --blue-400: #6089b0;
+    --blue-500: #406a94;
+    --blue-600: #2d4f73;
+    --blue-700: #1e3a5f;
+    --blue-800: #162d4a;
+    --blue-900: #0f1f33;
+    --blue-950: #08121f;
   }
 
   .dark {
-    --background: #0c0a09;
-    --foreground: #f1f1f3;
+    --background: #0f0f0f;
+    --foreground: #ececec;
 
-    --card: 20 14.3% 4.1%;
-    --card-foreground: 60 9.1% 97.8%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 20 14.3% 4.1%;
-    --popover-foreground: 60 9.1% 97.8%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: #cacace;
-    --primary-foreground: #f4f4f5;
+    --primary: #d4d4d4;
+    --primary-foreground: #f5f5f5;
 
-    --secondary: #96928f;
-    --secondary-foreground: #787778;
+    --secondary: #8a8a8a;
+    --secondary-foreground: #6a6a6a;
 
-    --muted: 12 6.5% 15.1%;
-    --muted-foreground: 24 5.4% 63.9%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 12 6.5% 15.1%;
-    --accent-foreground: 60 9.1% 97.8%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 95%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 60 9.1% 97.8%;
 
-    --border: 12 6.5% 15.1%;
-    --input: 12 6.5% 15.1%;
-    --ring: 24 5.7% 82.9%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 80%;
 
     --blue: var(--blue-400);
 
     /* Other colors */
-    --red: #ff5941;
-    --orange: #f97316;
-    --pink: #e794da;
-    /* --blue: #5570ff; */
-    --teal: #1f464d;
-    --teal-foreground: #3bb6ab;
-    --yellow: #eab308;
-    --yellow-foreground: #ffd726;
+    --red: #d9756a;
+    --orange: #e8a44c;
+    --pink: #d4a5c9;
+    --teal: #2d5a5a;
+    --teal-foreground: #4db3a8;
+    --yellow: #d4b742;
+    --yellow-foreground: #f0d45c;
   }
 }
 
