@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "MoFancy",
-  url: "https://mofancy.imoogleai.xyz",
-  ogImage: "https://mofancy.imoogleai.xyz/og.jpg",
+  url: "https://component.imoogleai.xyz",
+  ogImage: "https://component.imoogleai.xyz/og.jpg",
   description:
     "Ready to use, fancy React components to make the web fun again. An Imoogle Technology product. Free & Open Source.",
   links: {
