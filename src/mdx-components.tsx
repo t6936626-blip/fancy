@@ -18,8 +18,6 @@ import { ComponentSource } from "@/components/component-source"
 import { ExplanationDemo } from "@/components/explanation-demo"
 import { InstallTabs } from "@/components/install-tabs"
 
-import "katex/dist/katex.min.css"
-
 import Link from "next/link"
 import { BlockMath, InlineMath } from "react-katex"
 
@@ -152,16 +150,16 @@ export function mdxComponents(components?: MDXComponents): MDXComponents {
     img: ({
       className,
       alt,
+      src,
       ...props
     }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-      //@ts-expect-error img src expects a Blob or string
-      (<ImageComponent
-        src={props.src as string}
-        alt={alt as string}
-        caption={true}
-        className={className}
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={src}
+        alt={alt || ""}
+        className={cn("rounded-lg", className)}
         {...props}
-      />)
+      />
     ),
     hr: ({ ...props }: React.HTMLAttributes<HTMLHRElement>) => (
       <hr className="" {...props} />
