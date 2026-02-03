@@ -25,7 +25,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "fancycomponents.b-cdn.net",
+        hostname: "mofancy.b-cdn.net",
         port: "",
         pathname: "/**",
       }

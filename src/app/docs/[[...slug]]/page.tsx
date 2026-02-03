@@ -62,7 +62,7 @@ export async function generateMetadata(props: DocPageProps): Promise<Metadata> {
       title: doc.title,
       description: doc.description,
       images: [ogUrl],
-      creator: "@nonzeroexitcode",
+      creator: "@imoogletech",
     },
   }
 }
@@ -108,7 +108,7 @@ export default async function DocPage(props: DocPageProps) {
       params.slug?.[1]?.slice(1).toLowerCase() || "Getting Started"
 
   // Generate current URL for markdown links
-  const currentUrl = `https://fancycomponents.dev/docs/${params.slug?.join("/") || ""}`
+  const currentUrl = `https://component.imoogleai.xyz/docs/${params.slug?.join("/") || ""}`
 
   // Extract plain text content from the page (simplified version)
   // For now, using description. Could be enhanced to extract more content client-side

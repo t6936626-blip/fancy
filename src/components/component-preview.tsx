@@ -170,7 +170,7 @@ export function ComponentPreview({
                           <OpenInV0Button
                             variant="ghost"
                             className="justify-start  text-left px-0 h-6 gap-1  flex w-full border-none"
-                            url={`https://fancycomponents.dev/r/${name}.json`}
+                            url={`https://component.imoogleai.xyz/r/${name}.json`}
                           />
                         </DropdownMenuItem>
                         <DropdownMenuItem>
@@ -187,7 +187,7 @@ export function ComponentPreview({
                     </DropdownMenu>
                   ) : (
                     <OpenInV0Button
-                      url={`https://fancycomponents.dev/r/${name}.json`}
+                      url={`https://component.imoogleai.xyz/r/${name}.json`}
                     />
                   )}
                   <RestartButton onRestart={handleRestart} />

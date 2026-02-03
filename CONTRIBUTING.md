@@ -2,11 +2,11 @@
 
 Hi! Nice to have you here! :)
 
-First of all, huge thanks for your interest in contributing to fancycomponents.dev!
+First of all, huge thanks for your interest in contributing to MoFancy!
 
 Please take a moment to review this document before submitting your first pull request. Please also check for open issues and pull requests to see if someone else is working on something similar.
 
-If you need any help, feel free to reach out to [daniel](https://x.com/nonzeroexitcode), or open an issue.
+If you need any help, feel free to reach out to [Imoogle Technology](https://imoogleai.xyz), or open an issue.
 
 ## Stack
 
@@ -145,7 +145,7 @@ Please, have a look at an [existing component](./src/content/docs/components/blo
 
 In the `src/config/docs.ts` file, add a new item to the `docsConfig` array, at the correct category. Please make sure to add the `href`, and `New` as the `label`.
 
-When you're done and ready to submit your PR, please create a quick recording of your work, and upload it to the PR description. It will help us to speed up the review process. Check out [this PR](https://github.com/danielpetho/fancy/pull/2) for reference.
+When you're done and ready to submit your PR, please create a quick recording of your work, and upload it to the PR description. It will help us to speed up the review process.
 
 That's it, you're done! If you feel stuck anywhere, please don't hesitate to ask for help.
 

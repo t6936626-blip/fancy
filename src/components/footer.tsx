@@ -18,7 +18,18 @@ export function Footer() {
                 strokeWidth={2.5}
               />
             </a>
-            {" "}product
+            {" "}product, developed by{" "}
+            <a
+              href="https://github.com/sidicode"
+              className="cursor-pointer no-underline text-foreground hover:text-foreground/70 duration-300 transition-colors ease-out inline-flex items-center font-semibold focus-ring rounded-lg"
+            >
+              sidicode
+              <ExternalLinkIcon
+                className="ml-1 mt-0.5"
+                size={14}
+                strokeWidth={2.5}
+              />
+            </a>
           </p>
         </div>
       </div>
