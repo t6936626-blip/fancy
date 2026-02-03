@@ -1,7 +1,9 @@
 import fs from "node:fs"
 import path from "node:path"
 
-const CDN_URL = process.env.BUNNY_CDN_URL || "https://mofancy.b-cdn.net"
+// Hardcoded fallback URL - environment variable is optional
+const DEFAULT_CDN_URL = "https://fancycomponents.b-cdn.net"
+const CDN_URL = process.env.BUNNY_CDN_URL ? process.env.BUNNY_CDN_URL : DEFAULT_CDN_URL
 
 export const COMPONENTS_DIRECTORY = "/src/content/docs/components/"
 
