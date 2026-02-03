@@ -1,4 +1,4 @@
-# Acceptance Criteria for Fancy Components
+# Acceptance Criteria for MoFancy Components
 
 Hey there! Before you start working on a new component, please review these guidelines carefully.
 
@@ -52,4 +52,4 @@ You should provide a documentation page for the component, which should include:
 - Complete props documentation
 - Attribution where applicable
 
-If you're not sure if the component will met these requirements, feel free to reach out to daniel on [x](https://x.com/nonzeroexitcode), via email at hello@danielpetho.com, or open an issue.
+If you're not sure if the component will meet these requirements, feel free to reach out to [Imoogle Technology](https://imoogleai.xyz), or open an issue.

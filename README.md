@@ -1,10 +1,10 @@
-# Fancy Components
+# MoFancy
 
-A growing library of fancy, fun, animated react components & microinteractions to make the web fun again. Free & Open Source.
+A growing library of fancy, fun, animated react components & microinteractions to make the web fun again. Free & Open Source. Developed by Imoogle Technology.
 
 ## Documentation
 
-Visit https://fancycomponents.dev/docs/introduction to view the documentation.
+Visit https://component.imoogleai.xyz/docs/introduction to view the documentation.
 
 ## Contributing
 
